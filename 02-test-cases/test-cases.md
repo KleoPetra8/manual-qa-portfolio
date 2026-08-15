@@ -492,6 +492,404 @@ The Login page contains:
 1. Locate the **Forgot Password?** link.
 2. Click the link.
 
+---
+
+# ShopEasy – Registration Test Cases
+
+## Test Suite: User Registration
+
+### Requirements
+
+The Registration page contains:
+- First Name field
+- Last Name field
+- Email field
+- Password field
+- Confirm Password field
+- "I agree to the Terms and Conditions" checkbox
+- Register button
+
+### Business Rules
+
+- First Name is required.
+- Last Name is required.
+- Email is required and must have a valid email format.
+- Email must be unique and cannot already belong to an existing account.
+- Password is required.
+- Password must contain between 8 and 20 characters.
+- Password and Confirm Password must match.
+- The Terms and Conditions checkbox must be selected.
+- After successful registration, the user should be redirected to the Login page.
+
+---
+
+# ShopEasy – Registration Test Cases
+
+## Test Suite: User Registration
+
+### Requirements
+
+The Registration page contains:
+- First Name field
+- Last Name field
+- Email field
+- Password field
+- Confirm Password field
+- "I agree to the Terms and Conditions" checkbox
+- Register button
+
+### Business Rules
+
+- First Name is required.
+- Last Name is required.
+- Email is required and must have a valid email format.
+- Email must be unique and cannot already belong to an existing account.
+- Password is required.
+- Password must contain between 8 and 20 characters.
+- Password and Confirm Password must match.
+- The Terms and Conditions checkbox must be selected.
+- After successful registration, the user should be redirected to the Login page.
+
+---
+
+## Test Cases
+
+### TC-REG-001 – Verify successful registration with valid required data
+
+**Preconditions:**
+- User is on the Registration page.
+- The email address is not associated with an existing account.
+
+**Test Data:**
+- First Name: `Petra`
+- Last Name: `Test`
+- Email: `petra.test@example.com`
+- Password: `ValidPass123`
+- Confirm Password: `ValidPass123`
+- Terms and Conditions: Selected
+
+**Steps:**
+1. Enter a valid First Name.
+2. Enter a valid Last Name.
+3. Enter a valid and unique email address.
+4. Enter a valid password.
+5. Enter the same password in the Confirm Password field.
+6. Select the Terms and Conditions checkbox.
+7. Click the **Register** button.
+
+**Expected Result:**
+- Registration is successful.
+- A new user account is created.
+- The user is redirected to the Login page.
+
+**Priority:** High
+
+---
+
+### TC-REG-002 – Verify registration with an empty First Name field
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Leave the First Name field empty.
+2. Complete all other required fields with valid data.
+3. Select the Terms and Conditions checkbox.
+4. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicating that First Name is required is displayed.
+
+**Priority:** Medium
+
+---
+
+### TC-REG-003 – Verify registration with an empty Last Name field
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Enter a valid First Name.
+2. Leave the Last Name field empty.
+3. Complete all other required fields with valid data.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicating that Last Name is required is displayed.
+
+**Priority:** Medium
+
+---
+
+### TC-REG-004 – Verify registration with an empty Email field
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Complete all required fields except Email.
+2. Leave the Email field empty.
+3. Select the Terms and Conditions checkbox.
+4. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicating that Email is required is displayed.
+
+**Priority:** High
+
+---
+
+### TC-REG-005 – Verify registration with an invalid email format
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Test Data:**
+- Email: `petra.example.com`
+
+**Steps:**
+1. Complete the required fields with valid data.
+2. Enter `petra.example.com` in the Email field.
+3. Enter matching valid passwords.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- An appropriate email format validation message is displayed.
+
+**Priority:** High
+
+---
+
+### TC-REG-006 – Verify registration with an already registered email address
+
+**Preconditions:**
+- User is on the Registration page.
+- An account with `existing@example.com` already exists.
+
+**Test Data:**
+- Email: `existing@example.com`
+
+**Steps:**
+1. Complete all required fields with valid data.
+2. Enter an email address associated with an existing account.
+3. Enter matching valid passwords.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- A second account is not created using the same email address.
+- An appropriate error message is displayed.
+
+**Priority:** High
+
+---
+
+### TC-REG-007 – Verify registration with an empty Password field
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Complete the First Name, Last Name and Email fields with valid data.
+2. Leave the Password field empty.
+3. Complete the remaining required fields.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicating that Password is required is displayed.
+
+**Priority:** High
+
+---
+
+### TC-REG-008 – Verify registration with a 7-character password
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Test Data:**
+- Password: `Pass123`
+- Confirm Password: `Pass123`
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter a 7-character password.
+3. Enter the same password in Confirm Password.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicates that the password must contain at least 8 characters.
+
+**Priority:** Medium
+
+**Test Design Technique:** Boundary Value Analysis
+
+---
+
+### TC-REG-009 – Verify registration with an 8-character password
+
+**Preconditions:**
+- User is on the Registration page.
+- A unique email address is available.
+
+**Test Data:**
+- Password: `Pass1234`
+- Confirm Password: `Pass1234`
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter an 8-character password.
+3. Enter the same password in Confirm Password.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- The password length is accepted.
+- Registration is successful when all other information is valid.
+
+**Priority:** Medium
+
+**Test Design Technique:** Boundary Value Analysis
+
+---
+
+### TC-REG-010 – Verify registration with a 20-character password
+
+**Preconditions:**
+- User is on the Registration page.
+- A unique email address is available.
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter a valid password containing exactly 20 characters.
+3. Enter the same password in Confirm Password.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- The password length is accepted.
+- Registration is successful when all other information is valid.
+
+**Priority:** Medium
+
+**Test Design Technique:** Boundary Value Analysis
+
+---
+
+### TC-REG-011 – Verify registration with a 21-character password
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter a password containing exactly 21 characters.
+3. Enter the same password in Confirm Password.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- A validation message indicates that the password cannot exceed 20 characters.
+
+**Priority:** Medium
+
+**Test Design Technique:** Boundary Value Analysis
+
+---
+
+### TC-REG-012 – Verify registration when Password and Confirm Password do not match
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Test Data:**
+- Password: `ValidPass123`
+- Confirm Password: `DifferentPass123`
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter a valid password.
+3. Enter a different valid password in Confirm Password.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- An appropriate message indicating that the passwords do not match is displayed.
+
+**Priority:** High
+
+---
+
+### TC-REG-013 – Verify registration with an empty Confirm Password field
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Complete the personal information fields with valid data.
+2. Enter a valid password.
+3. Leave Confirm Password empty.
+4. Select the Terms and Conditions checkbox.
+5. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- An appropriate validation message is displayed for the Confirm Password field.
+
+**Priority:** High
+
+---
+
+### TC-REG-014 – Verify registration without accepting the Terms and Conditions
+
+**Preconditions:**
+- User is on the Registration page.
+
+**Steps:**
+1. Complete all registration fields with valid data.
+2. Leave the Terms and Conditions checkbox unselected.
+3. Click the **Register** button.
+
+**Expected Result:**
+- Registration is not completed.
+- The user is informed that accepting the Terms and Conditions is required.
+
+**Priority:** High
+
+---
+
+### TC-REG-015 – Verify redirection to the Login page after successful registration
+
+**Preconditions:**
+- User is on the Registration page.
+- A unique email address is available.
+
+**Steps:**
+1. Complete all required fields with valid data.
+2. Enter matching valid passwords.
+3. Select the Terms and Conditions checkbox.
+4. Click the **Register** button.
+5. Observe the page displayed after successful registration.
+
+**Expected Result:**
+- Registration is successful.
+- The user is redirected to the Login page.
+
+**Priority:** High
+
 **Expected Result:**
 
 * The user is redirected to the password recovery page.
