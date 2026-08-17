@@ -492,6 +492,13 @@ The Login page contains:
 1. Locate the **Forgot Password?** link.
 2. Click the link.
 
+**Expected Result:**
+
+- The user is redirected to the Forgot Password / Password Reset page.
+- The password recovery page is displayed successfully.
+
+**Priority:** Medium
+
 ---
 
 # ShopEasy – Registration Test Cases
