@@ -34,6 +34,3 @@ A Postman collection covering GET, POST, PUT, PATCH and DELETE requests. It incl
 
 ### [06 — SQL Testing](./06-sql-testing)
 SQL query examples for data validation and QA investigation, including filtering, sorting, NULL checks, counting records and basic JOIN queries.
-
-### 06 — SQL Testing
-SQL query examples for data validation and QA investigation, including filtering, sorting, NULL checks, counting records and basic JOIN queries.
