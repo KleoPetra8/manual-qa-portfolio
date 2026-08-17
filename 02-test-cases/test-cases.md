@@ -530,35 +530,6 @@ The Registration page contains:
 
 ---
 
-# ShopEasy – Registration Test Cases
-
-## Test Suite: User Registration
-
-### Requirements
-
-The Registration page contains:
-- First Name field
-- Last Name field
-- Email field
-- Password field
-- Confirm Password field
-- "I agree to the Terms and Conditions" checkbox
-- Register button
-
-### Business Rules
-
-- First Name is required.
-- Last Name is required.
-- Email is required and must have a valid email format.
-- Email must be unique and cannot already belong to an existing account.
-- Password is required.
-- Password must contain between 8 and 20 characters.
-- Password and Confirm Password must match.
-- The Terms and Conditions checkbox must be selected.
-- After successful registration, the user should be redirected to the Login page.
-
----
-
 ## Test Cases
 
 ### TC-REG-001 – Verify successful registration with valid required data
